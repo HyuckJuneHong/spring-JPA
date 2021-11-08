@@ -1,5 +1,7 @@
 package com.example.spring_jpa.domain;
 
+import com.example.spring_jpa.domain.sub.Address;
+import com.example.spring_jpa.domain.sub.BaseEntity;
 import lombok.*;
 
 import javax.persistence.*;
@@ -10,7 +12,7 @@ import java.util.List;
 @Table(name="MEMBER")
 @Getter
 @Setter
-public class Member extends BaseEntity{
+public class Member extends BaseEntity {
 
     @Id
     @GeneratedValue
@@ -18,9 +20,9 @@ public class Member extends BaseEntity{
     private Long id;
 
     private String name;
-    private String city;
-    private String street;
-    private String zipcode;
+
+    @Embedded
+    private Address address;
 
     //mappedBy속성을 사용해 이 domain이 주인이 아님을 알려주고 주인으로 member를 지정
     @OneToMany(mappedBy = "member")

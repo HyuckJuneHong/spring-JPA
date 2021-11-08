@@ -1,4 +1,4 @@
-package com.example.spring_jpa.domain;
+package com.example.spring_jpa.domain.sub;
 
 
 public enum OrderStatus {

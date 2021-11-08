@@ -15,6 +15,9 @@ public class OrderItem {
     @Column(name="ORDER_ITEM_ID")
     private Long id;
 
+    private int orderPrcie;
+    private int count;
+
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name="ITEM_ID")
     private Item item;
@@ -22,7 +25,4 @@ public class OrderItem {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name="ORDER_ID")
     private Order order;
-
-    private int orderPrcie;
-    private int count;
 }

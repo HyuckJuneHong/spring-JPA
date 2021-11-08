@@ -10,6 +10,7 @@ import java.util.List;
 @Entity
 @Getter
 @Setter
+@Table(name = "ITEM")
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)   //부모 클래스에 상속 매핑 정의 -> 단일 테이블 전략
 @DiscriminatorColumn(name="DTYPE")  //부모 클래스에 구분 컬럼을 지정 -> 구분 컬럼으로 "DTYPE"이란 이름을 기본으로 사용
 public class Item {

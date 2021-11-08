@@ -1,7 +1,8 @@
 package com.example.spring_jpa.domain;
 
+import com.example.spring_jpa.domain.sub.BaseEntity;
+import com.example.spring_jpa.domain.sub.OrderStatus;
 import lombok.Getter;
-import lombok.Setter;
 
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -11,13 +12,13 @@ import java.util.List;
 @Entity
 @Getter
 @Table(name="ORDERS")
-public class Order extends BaseEntity{
+public class Order extends BaseEntity {
 
     @Id @GeneratedValue
     @Column(name = "ORDER_ID")
     private Long id;
 
-    @Column(name="MEMBER_ID", insertable = false, updatable = false)
+    @Column(name="MEMBER")
     private Long memberId;
 
     @Temporal(TemporalType.TIMESTAMP)
